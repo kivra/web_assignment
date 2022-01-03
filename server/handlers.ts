@@ -1,7 +1,7 @@
 import pokes from "./data";
 import { Express } from "express";
 
-let favoritesStorage: string[] = [];
+let favoritesStorage: string[] = ['Ivysaur'];
 
 const favorites = {
   get(): string[] {
@@ -29,7 +29,7 @@ const sleep = (t: number) => new Promise(r => setTimeout(r, t));
 
 export const handlers = (app: Express) => {
   app.get("/all", async (req, res) => {
-    await sleep(200);
+    await sleep(20);
     const pokeFavorites = favorites.get();
 
     const pokemonList = pokes.map((p) => ({
@@ -48,6 +48,7 @@ export const handlers = (app: Express) => {
     if (result.error === "CONFLICT") {
       return res.status(409).send();
     }
+
     return res.status(200).send();
   });
 
@@ -59,6 +60,7 @@ export const handlers = (app: Express) => {
     if (result.error === "NO_FOUND") {
       return res.status(404).send();
     }
+
     return res.status(200).send();
   });
 };
