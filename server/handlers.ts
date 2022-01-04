@@ -41,7 +41,7 @@ export const handlers = (app: Express) => {
   });
 
   app.post("/favorite/:name", async(req, res) => {
-    await sleep(500);
+    await sleep(20);
     const newNameFav = req.params["name"] as string;
     const result = favorites.set(newNameFav);
 
@@ -53,7 +53,7 @@ export const handlers = (app: Express) => {
   });
 
   app.delete("/favorite/:name", async (req, res) => {
-    await sleep(500);
+    await sleep(700);
     const newNameFav = req.params["name"] as string;
     const result = favorites.remove(newNameFav);
 
@@ -62,5 +62,19 @@ export const handlers = (app: Express) => {
     }
 
     return res.status(200).send();
+  });
+
+  app.get("/favorite", async (req, res) => {
+    await sleep(400);
+    const pokeFavorites = favorites.get();
+
+    const pokemonList = pokes
+      .filter((p) => pokeFavorites.includes(p.name))
+      .map((p) => ({
+        ...p,
+        favorite: true,
+      }));
+
+    res.status(200).send(pokemonList);
   });
 };

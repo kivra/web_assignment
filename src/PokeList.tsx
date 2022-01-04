@@ -8,15 +8,6 @@ interface Poke {
   favorite: boolean;
 }
 
-// Kod kvalite, hur skriver kandidater kod
-
-/**
- * 0. Bekanta dig med koden, du kan göra vilka ändringar du vill i `src`. Förbättra gärna kodstandarden och eventuella style fixar som du kan tänka på. Följande url:er finns att tillgå. 
- * 1. Det verkar som att applikationen inte fungerar. Det går inte att lägga till/ta bort favoriter. Kan du fixa det?
- * 2. Lägg till en knapp för att enbart visa favoriter.
- * 3. Om du klickar snabb på knappen för att lägga till en pokemon som favorit. Fungerar det? Om inte, kan vi fixa det?
- */
-
 export function PokeList() {
   const [pokeList, setPokeList] = useState<Poke[]>([]);
 
