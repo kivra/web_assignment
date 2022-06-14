@@ -1,5 +1,5 @@
 import { Container } from "@mantine/core";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 import { PokeList } from "./PokeList";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
         padding: 20,
         display: "flex",
         flexWrap: "wrap",
-        justifyContent: "space-around"
+        justifyContent: "space-around",
       }}
       size="lg"
     >
@@ -21,4 +21,6 @@ function App() {
   );
 }
 
-render(<App />, document.querySelector("#app"));
+const container = document.getElementById("app")!;
+const root = createRoot(container);
+root.render(<App />);
