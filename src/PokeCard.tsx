@@ -11,9 +11,13 @@ interface Props {
 export function PokeCard(props: Props) {
   return (
     <div style={{ width: 340, marginBottom: 20 }}>
-      <Card shadow="sm" padding="lg">
+      <Card shadow="sm" p="lg">
         <Card.Section>
-          <Image src={props.image} height={340} style={{ objectFit: 'contain' }} />
+          <Image
+            src={props.image}
+            height={340}
+            style={{ objectFit: "contain" }}
+          />
         </Card.Section>
 
         <Group position="apart" style={{ marginBottom: 5 }}>

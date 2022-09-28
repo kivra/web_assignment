@@ -1,13 +1,13 @@
 import { createServer } from "vite";
 import express from "express";
-import { handlers } from './handlers';
+import { handlers } from "./handlers";
 
 async function createViteServer() {
   const server = await createServer({
     root: process.cwd(),
     server: {
       port: 3000,
-      middlewareMode: 'html',
+      middlewareMode: true,
     },
   });
 
@@ -19,4 +19,4 @@ async function createViteServer() {
   console.log("Visit http://localhost:3000");
 }
 
-createViteServer().catch(err => console.log(err));
+createViteServer().catch((err) => console.log(err));
