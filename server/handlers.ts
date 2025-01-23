@@ -1,7 +1,7 @@
 import pokes from "./data";
 import { Express } from "express";
 
-let favoritesStorage: string[] = ['Ivysaur'];
+let favoritesStorage: string[] = ["Ivysaur"];
 
 const favorites = {
   get(): string[] {
@@ -25,7 +25,7 @@ const favorites = {
   },
 };
 
-const sleep = (t: number) => new Promise(r => setTimeout(r, t));
+const sleep = (t: number) => new Promise((r) => setTimeout(r, t));
 
 export const handlers = (app: Express) => {
   app.get("/all", async (req, res) => {
@@ -40,16 +40,17 @@ export const handlers = (app: Express) => {
     res.status(200).send(pokemonList);
   });
 
-  app.post("/favorite/:name", async(req, res) => {
+  app.post("/favorite/:name", async (req, res) => {
     await sleep(20);
     const newNameFav = req.params["name"] as string;
     const result = favorites.set(newNameFav);
 
     if (result.error === "CONFLICT") {
-      return res.status(409).send();
+      res.status(409).send();
+      return;
     }
 
-    return res.status(200).send();
+    res.status(200).send();
   });
 
   app.delete("/favorite/:name", async (req, res) => {
@@ -58,10 +59,11 @@ export const handlers = (app: Express) => {
     const result = favorites.remove(newNameFav);
 
     if (result.error === "NO_FOUND") {
-      return res.status(404).send();
+      res.status(404).send();
+      return;
     }
 
-    return res.status(200).send();
+    res.status(200).send();
   });
 
   app.get("/favorite", async (req, res) => {

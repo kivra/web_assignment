@@ -4,12 +4,14 @@ You're taking over a partially implemented application. Our users have reported 
 
 ## 🧰 Requirements
 
-- Node.js >= v.16
+- Node.js >= v.16 (but it works better with 22+)
 
 ## 🏎 How to start
 
 1. Start by installing the dependencies with: `$ npm install`.
 2. Start the application by running: `$ npm start`.
+
+\*\* **NOTE: You can course use other runtimes/packagemanager if you want, like pnpm, Deno, Bun, etc. .** \*\*
 
 ## 📖 Before starting with the tasks
 

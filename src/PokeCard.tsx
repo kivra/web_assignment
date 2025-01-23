@@ -20,8 +20,8 @@ export function PokeCard(props: Props) {
           />
         </Card.Section>
 
-        <Group position="apart" style={{ marginBottom: 5 }}>
-          <Text weight={500}>{props.name}</Text>
+        <Group justify="space-between" style={{ marginBottom: 5 }}>
+          <Text>{props.name}</Text>
         </Group>
 
         <Text size="sm" style={{ lineHeight: 1.5 }}>
