@@ -11,7 +11,8 @@ You're taking over a partially implemented application. Our users have reported 
 1. Start by installing the dependencies with: `$ npm install`.
 2. Start the application by running: `$ npm start`.
 
-\*\* **NOTE: You can of course use other runtimes/packagemanager if you want, like pnpm, Deno, Bun, etc. .** \*\*
+> [!TIP]  
+> You can of course use other runtimes/packagemanager if you want, like pnpm, Deno, Bun, etc.
 
 ## 📖 Before starting with the tasks
 
@@ -24,7 +25,8 @@ Inside the server, you'll find the backend server with serves the data. It has t
 - `POST /favorite/:name` adds a pokemon to the favorites.
 - `DELETE /favorite/:name` removes a pokemon from the favorites.
 
-\*\* **NOTE: You won't need to do any changes in the `/server` directory, you'll only work within the `/src`.** \*\*
+> [!NOTE]  
+> You won't need to do any changes in the `/server` directory, you'll only work within the `/src`
 
 ## 📋 Tickets:
 
